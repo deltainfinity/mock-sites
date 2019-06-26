@@ -1,0 +1,521 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Vant4ge - Mock Site</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <style>
+        .tab-content {
+            padding: 30px;
+        }
+
+        .integration-form {
+            padding: 15px;
+            text-align: center;
+            width: 200px;
+            display: block;
+            margin: 50px auto;
+            box-shadow: 0 0 8px rgba(0, 0, 0, .2);
+            background: #f1f1f1;
+        }
+
+        .btn {
+            border: 0 none;
+            background: #00B0FF;
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+        }
+
+        .right {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl as ctrl">
+        <nav class="navbar navbar-default navbar-light bg-faded">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                     aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><b>QA</b> - Mock Integration Site</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <!-- <li class="active"> -->
+                            <!-- <a data-toggle="pill" href="#vpt">VPT</a> -->
+                        <!-- </li> -->
+                        <!-- <li> -->
+                            <!-- <a data-toggle="pill" href="#aea">aea</a> -->
+                        <!-- </li> -->
+                        <li class="dropdown" style="cursor:pointer">
+                            <a class="dropdown-toggle" type="button" data-toggle="dropdown">
+                                TDOC
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a data-toggle="pill" href="#vpt">VPT</a>
+                                </li>
+                                <!-- <li>
+                                    <a data-toggle="pill" href="#aea">AEA</a>
+                                </li> -->
+                            </ul>
+                        </li>
+                        <!-- <li class="dropdown" style="cursor:pointer">
+                            <a class="dropdown-toggle" type="button" data-toggle="dropdown">
+                                DEMO5
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a data-toggle="pill" href="#vptdemo">VPT</a>
+                                </li>
+                                <li>
+                                     data-toggle="pill" href="#aeademo">AEA</a> 
+                                </li> 
+                                <li>
+                                    <a data-toggle="pill" href="#vids">VIDS</a>
+                                </li>
+                            </ul>
+                        </li> -->
+                        <li class="dropdown" style="cursor:pointer">
+                            <a class="dropdown-toggle" type="button" data-toggle="dropdown">
+                                NDCS
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a data-toggle="pill" href="#vptndcs">VPT</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <div class="container">
+            <div class="tab-content">
+                <div id="vpt" class="tab-pane fade in active">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-info">
+                                <div class="panel-heading"><b>QA</b> - Vant4ge Etomis Integration Emulator</div>
+                                <div class="panel-body">
+                                    <form class="form-horizontal" action="https://qa-accounts.pathback.org/User/Authenticate" method="POST">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="Account_External_ID">Account External ID</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" ng-model="ctrl.vptmodel.Account_External_ID" name="Account_External_ID" required class="form-control"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="User_External_ID">User External ID</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" ng-model="ctrl.vptmodel.User_External_ID" name="User_External_ID" required class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="Subject_External_ID">Subject External ID</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" ng-model="ctrl.vptmodel.Subject_External_ID" name="Subject_External_ID" required class="form-control"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="Authentication_Token">Authentication Token</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" ng-model="ctrl.vptmodel.Authentication_Token" name="Authentication_Token" required class="form-control"
+                                                />
+                                            </div>
+                                            <div class="col-md-2">
+                                                <button type="button" ng-click="ctrl.getToken()" class="btn btn-info">Get Token</button>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <button class="btn btn-primary" type="submit">Access Vant4gePoint</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div id="vids" class="tab-pane fade">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-info">
+                                <div class="panel-heading" style="background:#b8f1cb">Vant4gePoint - IDS Integration [DEV]</div>
+                                <div class="panel-body">
+                                    <form ng-if="!ctrl.showUrl" class="form-horizontal" action="https://dev-accounts.pathback.org/User/vids/Authenticate" method="POST">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="booking_id">Booking ID</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" id="booking_id" name="booking_id" ng-model="ctrl.vidsmodel.booking_id" required class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="site_id">Site ID</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" id="site_id" name="site_id" ng-model="ctrl.vidsmodel.site_id" required class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <button class="btn btn-info" style="background:#2AB165" ng-click="ctrl.getUrl()" type="button">Access Subject Portal</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div ng-if="ctrl.showUrl">
+                                        Subject Access Portal URL :
+                                        <a href="{{ctrl.url}}">{{ctrl.url}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div id="aea" class="tab-pane fade">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading" style="background:#7575a3"><b>QA</b> - Assessment - Etomis Integration</div>
+                                <div class="panel-body">
+                                    <form class="form-horizontal" action="https://adc-tn-doc-ap-qa.assessments.com/account_general/logon.asp" method="POST">
+                                        <input type="hidden" value="F3C76EC5-81D0-468F-9C1F-6F58D5DCAA31" name="ACCOUNT_EXTERNAL_ID">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="USER_EXTERNAL_ID">UserID:</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" ng-model="ctrl.aeamodel.USER_EXTERNAL_ID" name="USER_EXTERNAL_ID" required class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="SUBJECT_EXTERNAL_ID">SubjectID:</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" ng-model="ctrl.aeamodel.SUBJECT_EXTERNAL_ID" name="SUBJECT_EXTERNAL_ID" required class="form-control"
+                                                 ng-change="ctrl.padEtomis()" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="AUTHENTICATION_TOKEN">AuthToken:</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" ng-model="ctrl.aeamodel.AUTHENTICATION_TOKEN" name="AUTHENTICATION_TOKEN" required class="form-control"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="DEBUG">Debug:</label>
+                                            <div class="col-sm-8">
+                                                <select class="form-control selectpicker" name="dbug" ng-model="ctrl.aeamodel.DEBUG">
+                                                    <option value="0">No</option>
+                                                    <option value="1">Yes</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <button class="btn btn-primary" style="background:#47476b" type="submit">Access Assessment Portal</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div id="vptdemo" class="tab-pane fade">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">Vant4ge - Demo5 Integration [Dev]</div>
+                                <div class="panel-body">
+                                    <form class="form-horizontal" action="https://dev-accounts.pathback.org/User/Authenticate" method="POST">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="Account_External_ID">Account External ID</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" ng-model="ctrl.vptdemomodel.Account_External_ID" name="Account_External_ID" required class="form-control"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="User_External_ID">User External ID</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" ng-model="ctrl.vptdemomodel.User_External_ID" name="User_External_ID" required class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="Subject_External_ID">Subject External ID</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" ng-model="ctrl.vptdemomodel.Subject_External_ID" name="Subject_External_ID" required class="form-control"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="Authentication_Token">Authentication Token</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" ng-model="ctrl.vptdemomodel.Authentication_Token" name="Authentication_Token" required class="form-control"
+                                                />
+                                            </div>
+                                            <div class="col-md-2">
+                                                <button type="button" ng-click="ctrl.getTokenForDemo()" class="btn btn-info">Get Token</button>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <button class="btn btn-primary" type="submit">Access Vant4gePoint</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+    
+                <!-- <div id="aeademo" class="tab-pane fade">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading" style="background:#7575a3">Assessment-Demo5 Integration [Dev]</div>
+                                <div class="panel-body">
+                                    <form class="form-horizontal" action="https://adc-tn-doc-ap.assessments.com/account_general/logon.asp" method="POST">
+                                        <input type="hidden" value="F3C76EC5-81D0-468F-9C1F-6F58D5DCAA31" name="ACCOUNT_EXTERNAL_ID">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="USER_EXTERNAL_ID">UserID:</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" ng-model="ctrl.aeademomodel.USER_EXTERNAL_ID" name="USER_EXTERNAL_ID" required class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="SUBJECT_EXTERNAL_ID">SubjectID:</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" ng-model="ctrl.aeademomodel.SUBJECT_EXTERNAL_ID" name="SUBJECT_EXTERNAL_ID" required class="form-control"
+                                                 ng-change="ctrl.padEtomisForDemo()" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="AUTHENTICATION_TOKEN">AuthToken:</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" ng-model="ctrl.aeademomodel.AUTHENTICATION_TOKEN" name="AUTHENTICATION_TOKEN" required class="form-control"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="DEBUG">Debug:</label>
+                                            <div class="col-sm-8">
+                                                <select class="form-control selectpicker" name="dbug" ng-model="ctrl.aeademomodel.DEBUG">
+                                                    <option value="0">No</option>
+                                                    <option value="1">Yes</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <button class="btn btn-primary" style="background:#47476b" type="submit">Access Assessment Portal</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                 <div id="vptndcs" class="tab-pane fade">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-info">
+                                <div class="panel-heading"><b>QA</b> - Vant4ge Nicams Integration Emulator</div>
+                                <div class="panel-body">
+                                    <form class="form-horizontal" action="https://qa-accounts.pathback.org/User/Authenticate" method="POST">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="Account_External_ID">Account External ID</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" ng-model="ctrl.vptndcsmodel.Account_External_ID" name="Account_External_ID" required class="form-control"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="User_External_ID">User External ID</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" ng-model="ctrl.vptndcsmodel.User_External_ID" name="User_External_ID" required class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="Subject_External_ID">Subject External ID</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" ng-model="ctrl.vptndcsmodel.Subject_External_ID" name="Subject_External_ID" required class="form-control"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="Authentication_Token">Authentication Token</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" ng-model="ctrl.vptndcsmodel.Authentication_Token" name="Authentication_Token" required class="form-control"
+                                                />
+                                            </div>
+                                            <div class="col-md-2">
+                                                <button type="button" ng-click="ctrl.getTokenForNDCS()" class="btn btn-info">Get Token</button>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <button class="btn btn-primary" type="submit">Access Vant4gePoint</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+
+        </div>
+    </div>
+    </div>
+    <script>
+        (function () {
+            var app = angular.module('myApp', [])
+                .controller('myCtrl', ['$scope', '$http', myController]);
+            function myController($scope, $http) {
+                var vm = this;
+                var VPAPIBaseURL = 'https://qa-accounts.pathback.org/';
+                var SCOREAuthenticatePath = VPAPIBaseURL + 'User/SCORE/Authenticate';
+                var SORAuthTokenPath = VPAPIBaseURL + 'User/SOR/AuthToken';
+
+                vm.vidsmodel = {
+                    booking_id: '893475',
+                    site_id: 'DEMO'
+                };
+                vm.vptmodel = {
+                    Account_External_ID: 'F3C76EC5-81D0-468F-9C1F-6F58D5DCAA31',
+                    User_External_ID: '654987125',
+                    Subject_External_ID: '1654992479',
+                    Authentication_Token: ''
+                };
+                vm.aeamodel = {
+                    USER_EXTERNAL_ID: '',
+                    SUBJECT_EXTERNAL_ID: '',
+                    AUTHENTICATION_TOKEN: '',
+                    DEBUG: '0'
+                };
+
+                vm.vptdemomodel = {
+                    Account_External_ID: 'b382f902-f59a-4b59-9f8f-ab1cf219ba54',
+                    User_External_ID: '12321683',
+                    Subject_External_ID: '893475',
+                    Authentication_Token: ''
+                };
+
+                vm.aeademomodel = {
+                    USER_EXTERNAL_ID: '12321680',
+                    SUBJECT_EXTERNAL_ID: '893475',
+                    AUTHENTICATION_TOKEN: '',
+                    DEBUG: '0'
+                };
+                
+                vm.vptndcsmodel = {
+                    Account_External_ID: '3A95AE56-83F6-47D0-8637-AAE65E917D9F',
+                    User_External_ID: '1654991811',
+                    Subject_External_ID: '1654991810',
+                    Authentication_Token: ''
+                };
+
+                vm.showUrl = false;
+                vm.url = "";
+                vm.getUrl = function () {
+                    $http.post(SCOREAuthenticatePath, vm.vidsmodel)
+                        .then(function (response) {
+                            vm.url = response.data;
+                            vm.showUrl = true;
+                        })
+                        .catch(function (response) {
+                            vm.message = "An error occurred.";
+                        });
+                };
+                
+                vm.getToken = function () {
+                var json = JSON.stringify(vm.vptmodel);
+                    $http.post(SORAuthTokenPath, json)
+                        .then(function (response) {
+                            vm.vptmodel.Authentication_Token = response.data;
+                        })
+                        .catch(function (response) {
+                            vm.vptmodel.Authentication_Token = "An error occurred.";
+                        });
+                };
+
+                vm.getTokenForDemo = function () {
+                var jsonfordemo = JSON.stringify(vm.vptdemomodel);
+                    $http.post(SORAuthTokenPath, jsonfordemo)
+                        .then(function (response) {
+                            vm.vptdemomodel.Authentication_Token = response.data;
+                        })
+                        .catch(function (response) {
+                            vm.vptdemomodel.Authentication_Token = "An error occurred.";
+                        });
+                };
+                
+                vm.getTokenForNDCS = function () {
+                var jsonforndcs = JSON.stringify(vm.vptndcsmodel);
+                    $http.post(SORAuthTokenPath, jsonforndcs)
+                        .then(function (response) {
+                            vm.vptndcsmodel.Authentication_Token = response.data;
+                        })
+                        .catch(function (response) {
+                            vm.vptndcsmodel.Authentication_Token = "An error occurred.";
+                        });
+                };
+
+                function pad(num, size) {
+                    var s = num + "";
+                    while (s.length < size) s = "0" + s;
+                    return s;
+                }
+
+                //function padEtomis() {
+                //var subjectExternalID = document.getElementById("SUBJECT_EXTERNAL_ID").value;
+                //document.getElementById("SUBJECT_EXTERNAL_ID").value = pad(subjectExternalID, 8);
+                //}
+
+                vm.padEtomis = function () {
+                    vm.aeamodel.SUBJECT_EXTERNAL_ID = pad(vm.aeamodel.SUBJECT_EXTERNAL_ID, 8);
+                }
+
+                vm.padEtomisForDemo = function () {
+                    vm.aeademomodel.SUBJECT_EXTERNAL_ID = pad(vm.aeademomodel.SUBJECT_EXTERNAL_ID, 8);
+                }
+                
+            };
+        })();
+    </script>
+</body>
+
+</html>
